@@ -56,10 +56,10 @@ if "agora_v2_vector" not in st.session_state:
 
 #API Keys -> Session State
 if "openai_api_key" not in st.session_state:
-    st.session_state["openai_api_key"] = "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"
+    st.session_state["openai_api_key"] = st.secrets["api_keys"]["openai_api_key"]
 
 if "anthropic_api_key" not in st.session_state:
-    st.session_state["anthropic_api_key"] = "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"
+    st.session_state["anthropic_api_key"] = st.secrets["api_keys"]["anthropic_api_key"]
 
 
 
