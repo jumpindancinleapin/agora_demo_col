@@ -15,7 +15,7 @@ st.divider()
 
 #Inputs
 avatar_options = ["🦁", "⚖️", "🍎", "🦉", "🗽" ]
-topic_options = ["1_PicnicMystery", "2_Contracts101", "3_FinancialDiscrepancy"]
+topic_options = ["1_PicnicMystery", "2_Contracts101", "3_Securities"]
 model_options = ["gpt-3.5-turbo", "gpt-4o-mini", "gpt-4o"]
 
 col1, col2 = st.columns(2)
