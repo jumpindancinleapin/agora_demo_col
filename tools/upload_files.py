@@ -1,5 +1,8 @@
 import streamlit as st
 
+st.session_state["last_page_visited"] = "tools/upload_files.py"
+
+
 #Messaging
 st.title("Upload Files")
 st.write("I have handled the file uploading, but this is the place a user would upload and organize their own files.")

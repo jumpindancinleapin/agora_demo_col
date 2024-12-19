@@ -1,6 +1,8 @@
 import streamlit as st
 
 
+st.session_state["last_page_visited"] = "tools/manage_api_keys.py"
+
 #Messaging
 st.title("Manage API Keys")
 st.write("I have also included API keys for you, but this is where users would input their keys.")

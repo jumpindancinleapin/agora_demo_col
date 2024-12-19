@@ -1,5 +1,10 @@
 import streamlit as st
 
+
+last_page_visited = st.session_state["last_page_visited"]
+st.session_state["last_page_visited"] = "agora/agora_v3.py"
+
+
 #Disclaimer control
 if st.session_state["disclaimer_acknowledged"] == False:
     st.switch_page("more/disclaimer.py")
@@ -45,32 +50,38 @@ with st.sidebar:
 #Nav
 head_l, head_r = st.columns(2)
 with head_l:
-    if st.button("<- View Files", use_container_width=True):
-        st.switch_page("tools/file_viewer.py")
+    if st.button("<- Open Chat", use_container_width=True):
+        st.switch_page("agora/agora_v2.py")
 with head_r:
     if st.button("Complete Demo ->", use_container_width=True, type="primary"):
         st.switch_page("more/thank_you.py")
     
 
 #Messaging
-st.title("Agora Guide :material/explore:")
+st.title("Guided Chat with Agora :material/explore:")
 
 if st.session_state["agora_v3_instructions_viewed"] == False:
     st.write(
         """
-        New instructions needed 1
+        **Guided Chat** with Agora is more controlled: not only is 
+        Agora's response controlled, the ***input*** is controlled as well.
         """    
     )
 
     st.write(
         """
-        New instructions needed 2
+        Select a prompt to begin the conversation. 
+        Prompts will regenerate based on the direction
+        of the conversation. 
         """
     )
 
     st.write(
         """
-        New instructions needed 3
+        Instructions will go away once you begin.
+        To read them again, click **Restart** in the side menu, where
+        **Status** is also available.
+        This will also restart the conversation.
         """
     )
 
@@ -206,7 +217,7 @@ for message in reversed(messages.data[:-1]):
     if message.role == "user":
         st.chat_message(message.role, avatar=st.session_state["avatar_choice"]).write(message.content[0].text.value)
     elif message.role == "assistant":
-        st.chat_message(message.role).write(message.content[0].text.value)
+        st.chat_message(message.role, avatar=":material/explore:").write(message.content[0].text.value)
 
 #Get queries
 current_messages = client.beta.threads.messages.list(thread_id=st.session_state["agora_v3_thread_id"])

@@ -10,8 +10,9 @@ preferences = st.Page("tools/preferences.py", title="Preferences", icon=":materi
 upload_files = st.Page("tools/upload_files.py", title="Upload Files", icon=":material/upload_file:")
 manage_api_keys = st.Page("tools/manage_api_keys.py", title="Manage API keys", icon=":material/key:")
 file_viewer = st.Page("tools/file_viewer.py", title="View Files", icon=":material/search:")
-agora_v2 = st.Page("tools/agora_v2.py", title="Chat with Agora", icon=":material/robot_2:")
-agora_v3 = st.Page("tools/agora_v3.py", title="Agora Guide", icon=":material/explore:")
+
+agora_v2 = st.Page("agora/agora_v2.py", title="Open Chat", icon=":material/robot_2:")
+agora_v3 = st.Page("agora/agora_v3.py", title="Guided Chat", icon=":material/explore:")
 
 thank_you = st.Page("more/thank_you.py", title="Thank You", icon=":material/star:")
 about = st.Page("more/about.py", title="About", icon=":material/info:")
@@ -22,8 +23,9 @@ disclaimer = st.Page("more/disclaimer.py", title="Disclaimer", icon=":material/w
 pg = st.navigation(
     {
         "Home": [welcome, explainer],
-        "Tools": [preferences, upload_files, manage_api_keys, file_viewer, agora_v2, agora_v3],
-        "More": [thank_you, about, disclaimer]
+        "Tools": [preferences, upload_files, manage_api_keys, file_viewer],
+        "Agora": [agora_v2, agora_v3],
+        "More": [thank_you, about, disclaimer],
     }
 )
 
@@ -38,6 +40,8 @@ if "openai_api_key" not in st.session_state:
 
 if "disclaimer_acknowledged" not in st.session_state:
     st.session_state["disclaimer_acknowledged"] = False
+if "last_page_visited" not in st.session_state:
+    st.session_state["last_page_visited"] = "home/welcome.py"
 
 # - Pref
 if "avatar_choice" not in st.session_state:

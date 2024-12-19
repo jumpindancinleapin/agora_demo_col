@@ -1,5 +1,35 @@
 import streamlit as st
 
+st.session_state["last_page_visited"] = "more/thank_you.py"
+
+
+#Helper functions
+def reset_demo():
+    
+    st.session_state["disclaimer_acknowledged"] = False
+    st.session_state["last_page_visited"] = "home/welcome.py"
+
+    # - Pref
+    
+    st.session_state["avatar_choice"] = "🦁"
+    st.session_state["topic_choice"] = "1_PicnicMystery"
+    st.session_state["model_choice"] = "gpt-4o"
+
+    # - Agora v2
+    st.session_state["agora_v2_instructions_viewed"] = False
+    st.session_state["agora_v2_assistant_id"] = None
+    st.session_state["agora_v2_thread_id"] = None
+    st.session_state["agora_v2_vector"] = None
+
+    # - Agora v3
+    st.session_state["agora_v3_instructions_viewed"] = False
+    st.session_state["agora_v3_assistant_id"] = None
+    st.session_state["agora_v3_thread_id"] = None
+    st.session_state["agora_v3_vector"] = None
+    st.session_state["agora_v3_qqg_id"] = None
+    st.session_state["agora_v3_thread_qqg_id"] = None
+    st.session_state["agora_v3_query_choice"] = None
+
 
 
 #Messaging
@@ -32,5 +62,6 @@ with foot_l:
         st.switch_page("more/about.py")
 with foot_r:
     if st.button(":material/replay: Start Demo Over", use_container_width=True):
+        reset_demo()
         st.switch_page("home/welcome.py")
 

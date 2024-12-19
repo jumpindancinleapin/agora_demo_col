@@ -2,6 +2,9 @@ import streamlit as st
 import os
 
 
+st.session_state["last_page_visited"] = "tools/file_viewer.py"
+
+
 #Messaging
 st.title("View Files")
 st.write("The files below correspond to the topic preference you set. You can explore all of the files here using the controls below. **Agora** already has!")
@@ -58,8 +61,8 @@ with foot_lt:
         st.switch_page("tools/manage_api_keys.py")
 
 with foot_rt:
-    if st.button("Agora ->", use_container_width=True, type="primary"):
-                st.switch_page("tools/agora_v2.py")
+    if st.button("Open Chat ->", use_container_width=True, type="primary"):
+                st.switch_page("agora/agora_v2.py")
         
 
 

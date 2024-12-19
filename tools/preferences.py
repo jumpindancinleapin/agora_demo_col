@@ -1,5 +1,9 @@
 import streamlit as st
 
+
+st.session_state["last_page_visited"] = "tools/preferences.py"
+
+
 #Helper functions
 def topic_change():
     #agora v2

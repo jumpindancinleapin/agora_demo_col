@@ -1,7 +1,8 @@
 import streamlit as st
 
-#Messaging
+st.session_state["last_page_visited"] = "home/explainer.py"
 
+#Messaging
 st.title("What is this?")
 
 st.write(

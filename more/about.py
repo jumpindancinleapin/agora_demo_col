@@ -1,5 +1,8 @@
 import streamlit as st
 
+last_page_visited = st.session_state["last_page_visited"]
+
+
 #Messaging
 st.title("About")
 
@@ -26,5 +29,6 @@ st.write(
 foot_l, foot_m, foot_r = st.columns(3)
 
 with foot_m:
-    if st.button(":material/replay: Start Demo Over", use_container_width=True):
-        st.switch_page("home/welcome.py")
+    if st.button("<- Previous Page", use_container_width=True):
+        st.switch_page(last_page_visited)
+

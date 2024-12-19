@@ -1,5 +1,8 @@
 import streamlit as st
 
+last_page_visited = st.session_state["last_page_visited"]
+st.session_state["last_page_visited"] = "agora/agora_v2.py"
+
 #Disclaimer control
 if st.session_state["disclaimer_acknowledged"] == False:
     st.switch_page("more/disclaimer.py")
@@ -38,21 +41,22 @@ with head_l:
     if st.button("<- View Files", use_container_width=True):
         st.switch_page("tools/file_viewer.py")
 with head_r:
-    if st.button("Complete Demo ->", use_container_width=True, type="primary"):
-        st.switch_page("more/thank_you.py")
+    if st.button("Guided Chat ->", use_container_width=True, type="primary"):
+        st.switch_page("agora/agora_v3.py")
     
 
 #Messaging
-st.title("Chat with Agora :material/robot_2:")
+st.title("Open Chat with Agora :material/robot_2:")
 
 if st.session_state["agora_v2_instructions_viewed"] == False:
     st.write(
-            """
-            We made it! Thank you for coming along. Here is **Agora** at last. 
-            Agora has read the files you chose, and is ready to get down to business.
-            This page is computationally heavier than the previous ones; I have added status information at the botton of the navigation menu
-            to assure your confidence that Agora is working for ***you***.
-            """
+        """
+        We made it! Thank you for coming along. Here is **Agora** at last. 
+        Agora has read the files you chose, and is ready to get down to business.
+        This page is computationally heavier than the previous ones; 
+        I have added **Status** information at the botton of the navigation menu
+        to assure your confidence that Agora is working for ***you***.
+        """
     )
 
     st.write(
@@ -65,8 +69,8 @@ if st.session_state["agora_v2_instructions_viewed"] == False:
     st.write(
         """
         These instructions will go away once you begin your chat.
-        To read them again, click **Restart** in the side menu. This will
-        also reset the chat.
+        To read them again, click **Restart** in the side menu, This will
+        also restart the chat.
         """
     )
 
