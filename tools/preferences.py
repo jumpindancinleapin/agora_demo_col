@@ -2,9 +2,17 @@ import streamlit as st
 
 #Helper functions
 def topic_change():
+    #agora v2
     st.session_state["agora_v2_assistant_id"] = None
     st.session_state["agora_v2_thread_id"] = None
     st.session_state["agora_v2_vector"] = None
+    #agora v3
+    st.session_state["agora_v3_assistant_id"] = None
+    st.session_state["agora_v3_thread_id"] = None
+    st.session_state["agora_v3_vector"] = None
+    st.session_state["agora_v3_qqg_id"] = None
+    st.session_state["agora_v3_thread_qqg_id"] = None
+    st.session_state["agora_v3_query_choice"] = None
     
 
 #Messaging
