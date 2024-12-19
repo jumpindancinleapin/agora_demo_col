@@ -249,15 +249,11 @@ with st.sidebar:
 query_response = client.beta.threads.messages.list(thread_id=st.session_state["agora_v3_thread_qqg_id"]).data[0].content[0].text.value
 query_options = json.loads(query_response)
 
-print(query_options["query1"])
-print(query_options["query2"])
-print(query_options["query3"])
-print("Hallo!")
 
 #New Message
-st.button(query_options["query1"], key="qo1", on_click=set_agora_v3_query_choice(query_options["query1"]))
-st.button(query_options["query2"], key="qo2", on_click=set_agora_v3_query_choice(query_options["query2"]))
-st.button(query_options["query3"], key="qo3", on_click=set_agora_v3_query_choice(query_options["query3"]))
+st.button(query_options["query1"], key="qo1", on_click=set_agora_v3_query_choice, args=[query_options["query1"]])
+st.button(query_options["query2"], key="qo2", on_click=set_agora_v3_query_choice, args=[query_options["query2"]])
+st.button(query_options["query3"], key="qo3", on_click=set_agora_v3_query_choice, args=[query_options["query3"]])
 
 
 
