@@ -5,7 +5,12 @@ st.session_state["last_page_visited"] = "tools/upload_files.py"
 
 #Messaging
 st.title("Upload Files")
-st.write("I have handled the file uploading, but this is the place a user would upload and organize their own files.")
+st.write(
+    """
+    I have handled file uploading for this demo, but here a 
+    user would upload files and organize them into **topics**.
+    """    
+)
 
 st.divider()
 

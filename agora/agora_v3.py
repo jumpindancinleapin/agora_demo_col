@@ -65,19 +65,11 @@ if st.session_state["agora_v3_instructions_viewed"] == False:
         """
         **Guided Chat** with Agora is more controlled: not only is 
         Agora's response controlled, the ***input*** is controlled as well.
-        """    
-    )
 
-    st.write(
-        """
         Select a prompt to begin the conversation. 
         Prompts will regenerate based on the direction
         of the conversation. 
-        """
-    )
 
-    st.write(
-        """
         Instructions will go away once you begin.
         To read them again, click **Restart** in the side menu, where
         **Status** is also available.

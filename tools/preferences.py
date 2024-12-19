@@ -21,20 +21,28 @@ def topic_change():
 
 #Messaging
 st.title("Preferences")
-st.write("A few choices to guide your conversation with **Agora**. You can change these at anytime.")
+st.write(
+    """
+    A few choices to personalize your experience. 
+    The **avatar** will be your chat icon, and the **topic**
+    dictates to which set of files Agora and Queequeg will 
+    refer. I have locked the **model** to the latest and greatest
+    to maximize the experience. You can **make changes at any time**.
+    """
+)
 st.divider()
 
 
 #Inputs
 avatar_options = ["🦁", "⚖️", "🍎", "🦉", "🗽" ]
-topic_options = ["1_PicnicMystery", "2_Contracts101", "3_Securities"]
+topic_options = ["Artificial_Intelligence", "Climate", "Digital Assets"]
 model_options = ["gpt-3.5-turbo", "gpt-4o-mini", "gpt-4o"]
 
 col1, col2 = st.columns(2)
 
 with col1:
     st.session_state["avatar_choice"] = st.radio(
-        "Please choose an avatar:",
+        "Please choose an **avatar**:",
         avatar_options,
         captions=[
             "Go Columbia Lions!",
@@ -48,13 +56,13 @@ with col1:
 
 with col2:
     st.session_state["topic_choice"] = st.radio(
-        "Please choose a topic:",
+        "Please choose a **topic**:",
         topic_options,
         index=topic_options.index(st.session_state["topic_choice"]),
         on_change=topic_change
     )
     st.session_state["model_choice"] = st.radio(
-        "Please choose a model:",
+        "Please choose a **model**:",
         model_options,
         captions=[
             "Older",

@@ -47,7 +47,7 @@ if "last_page_visited" not in st.session_state:
 if "avatar_choice" not in st.session_state:
     st.session_state["avatar_choice"] = "🦁"
 if "topic_choice" not in st.session_state:
-    st.session_state["topic_choice"] = "1_PicnicMystery"
+    st.session_state["topic_choice"] = "Artificial_Intelligence"
 if "model_choice" not in st.session_state:
     st.session_state["model_choice"] = "gpt-4o"
 

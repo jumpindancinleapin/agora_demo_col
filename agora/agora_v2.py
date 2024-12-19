@@ -56,18 +56,10 @@ if st.session_state["agora_v2_instructions_viewed"] == False:
         This page is computationally heavier than the previous ones; 
         I have added **Status** information at the botton of the navigation menu
         to assure your confidence that Agora is working for ***you***.
-        """
-    )
 
-    st.write(
-        """
         **Ask Agora about a detail in the files you chose. To find Agora's boundaries, 
         request they write an essay or state an opinion.**
-        """
-    )
 
-    st.write(
-        """
         These instructions will go away once you begin your chat.
         To read them again, click **Restart** in the side menu, This will
         also restart the chat.
@@ -160,7 +152,7 @@ for message in reversed(messages.data[:-1]):
     if message.role == "user":
         st.chat_message(message.role, avatar=st.session_state["avatar_choice"]).write(message.content[0].text.value)
     else:
-        st.chat_message(message.role).write(message.content[0].text.value)
+        st.chat_message(message.role, avatar=":material/robot_2:").write(message.content[0].text.value)
 
 
 #New Message
@@ -183,7 +175,7 @@ if prompt := st.chat_input():
             user_run = wait_on_run(user_run)
 
     response = client.beta.threads.messages.list(thread_id=st.session_state["agora_v2_thread_id"]).data[0]
-    st.chat_message("assistant").write(response.content[0].text.value)
+    st.chat_message("assistant", avatar=":material/robot_2:").write(response.content[0].text.value)
 
 with st.sidebar:
     st.success("Ready", icon=":material/check_circle:")

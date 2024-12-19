@@ -34,25 +34,31 @@ def reset_demo():
 
 #Messaging
 st.title("Thank you!")
-st.write("...for trying out ***Agora***!")
 st.write(
     """
     Columbia Law School is my dream. By the numbers, my potential is below that of the average CLS applicant. 
-    My drive speaks louder. This app exists to showcase my 
-    technical skills, my commitment to empowering others, and my ability to innovate and solve problems. 
-    **I'm applying with nothing to lose**, determined to bring my unique perspective, resilience, and skills to Columbia Law. 
-    I will gladly accept defeat once I have given it my all. Until then, I proceed. This way, upon acceptance, I am deserving of 
-    the opportunity that so many other qualified candidates do not receive. 
+    My drive speaks louder. This app exists to showcase my commitment to empowering others, and my ability 
+    to innovate and solve problems. 
+    
+    Not only am I trained in AI from a business perspective, **I am a practioner**. 
+    From writing perceptrons to implementing chatbots, I have done it. This app 
+    is my take on aligning AI with a law student's responsibilities. I will
+    continue to iterate upon it as I learn more about Columbia's values.
+
+    **I have nothing to lose**, and will gladly accept defeat once I have given it my all. 
+    Until then, I proceed. This way, upon acceptance, I am deserving of 
+    the opportunity that so many qualified candidates do not receive. 
+
+
+    All the best,
+
+    ***Jake Lindsay***
+
+    L43133966
     """
 )
-st.write(
-    "All the best,"
-)
-st.write(
-    "***Jake Lindsay***"
-)
-st.write("L43133966")
 
+st.divider()
 
 #Nav
 foot_l, foot_r = st.columns(2)

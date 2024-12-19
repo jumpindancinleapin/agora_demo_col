@@ -5,7 +5,12 @@ st.session_state["last_page_visited"] = "tools/manage_api_keys.py"
 
 #Messaging
 st.title("Manage API Keys")
-st.write("I have also included API keys for you, but this is where users would input their keys.")
+st.write(
+    """
+    API Keys are secret passwords to access third-party APIs. I have hidden mine in the app for use in this demo. When you chat with Agora,
+    an OpenAI server will know to charge me a few cents.
+    """
+)
 st.divider()
 
 #Inputs

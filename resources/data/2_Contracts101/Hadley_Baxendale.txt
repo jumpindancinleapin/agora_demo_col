@@ -1,8 +1,0 @@
-Hadley v Baxendale (1854) – Damages for Breach of Contract
-This landmark case established the rule governing the recoverability of damages in contract law. The dispute arose when Hadley, the owner of a flour mill, contracted Baxendale, a carrier, to transport a broken crankshaft to an engineering company for repair. Baxendale promised to deliver the item within a specified time frame, but due to negligence, the delivery was delayed. As a result, the mill was unable to operate, and Hadley sought compensation for the lost profits caused by the extended downtime.
-
-The court articulated a two-limbed rule for assessing the damages recoverable in a breach of contract. Damages are limited to those that:
-
-Arise naturally, in the usual course of events from the breach (general damages).
-Are within the contemplation of both parties at the time of the contract as probable results of a breach (special damages).
-The court held that Baxendale could not have reasonably foreseen the mill's total reliance on the crankshaft without explicit communication of this fact at the time of contracting. Therefore, the lost profits were deemed too remote to be recoverable. This case has become a fundamental authority for the doctrine of remoteness in contract law, influencing subsequent rulings on the scope of recoverable damages.
