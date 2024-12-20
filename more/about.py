@@ -51,6 +51,8 @@ st.write(
     """
 )
 
+st.write("v1.0c")
+
 
 st.divider()
 
