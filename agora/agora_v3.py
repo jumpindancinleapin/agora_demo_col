@@ -68,7 +68,7 @@ if st.session_state["agora_v3_instructions_viewed"] == False:
         thanks Queequeg!
 
         Select a prompt to begin the conversation. 
-        Prompts will regenerate based on the direction
+        Queequeg will regenerate more prompts based on the direction
         of the conversation. 
 
         Instructions will go away once you begin.
@@ -81,7 +81,7 @@ if st.session_state["agora_v3_instructions_viewed"] == False:
 st.session_state["agora_v3_instructions_viewed"] = True
 
 topic_choice = st.session_state["topic_choice"]
-st.write(f"**Agora** has been trained on the `{topic_choice}` directory.")
+st.write(f"**Agora** and **Queequeg** have been trained on the `{topic_choice}` directory.")
 
 st.divider()
 
