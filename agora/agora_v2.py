@@ -53,9 +53,8 @@ if st.session_state["agora_v2_instructions_viewed"] == False:
         """
         We made it! Thank you for coming along. Here is **Agora** at last. 
         Agora has read the files you chose, and is ready to get down to business.
-        This page is computationally heavier than the previous ones; 
-        I have added **Status** information at the botton of the navigation menu
-        to assure your confidence that Agora is working for ***you***.
+        Agora takes a few seconds to spin up, and a few seconds to respond to your queries. 
+        Don't worry; Agora is working for ***you***!.
 
         **Ask Agora about a detail in the files you chose. To find Agora's boundaries, 
         request they write an essay or state an opinion.**

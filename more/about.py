@@ -9,6 +9,23 @@ st.title("About")
 
 st.write(
     """
+    **The Team**
+
+    Agora is named for the word **agora**, which can refer to a place for
+    civil debate. 
+
+    ***Q***ueeque***g***'s name reflects their purpose: ***Q***uery ***g***eneration. 
+
+
+    **GitHub**
+    """
+)
+st.link_button("See the code ->", "https://github.com/jumpindancinleapin/agora_demo_col")
+st.write(
+    
+    """
+
+
     **Scripting**
 
     Scripting is done with Python, the popular and versatile programming language.

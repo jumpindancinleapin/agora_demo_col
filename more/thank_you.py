@@ -36,7 +36,7 @@ def reset_demo():
 st.title("Thank you!")
 st.write(
     """
-    Columbia Law School is my dream. By the numbers, my potential is below that of the average CLS applicant. 
+    Columbia Law School is my dream. By the numbers, my potential is below that of the average CLS matriculant. 
     My drive speaks louder. This app exists to showcase my commitment to empowering others, and my ability 
     to innovate and solve problems. 
     
