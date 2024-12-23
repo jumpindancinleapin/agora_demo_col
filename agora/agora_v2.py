@@ -85,33 +85,31 @@ if st.session_state["agora_v2_thread_id"] == None:
 assistant = None
 if st.session_state["agora_v2_assistant_id"] == None:
     
-    with st.sidebar:
-        with st.spinner("Creating Agora instance..."):
+    with st.spinner("Creating Agora instance..."):
     
-            #Create Agora
-            assistant = client.beta.assistants.create(
-            name="Legal Research Assistant",
-            instructions="You are a legal research assistant named Agora. You answer with facts, and avoid encroaching upon the users critical thinking. Do not write complete drafts for essays.",
-            model=st.session_state["model_choice"],
-            tools=[{"type": "file_search"}],
-            )
-            st.session_state["agora_v2_assistant_id"] = assistant.id
+        #Create Agora
+        assistant = client.beta.assistants.create(
+        name="Legal Research Assistant",
+        instructions="You are a legal research assistant named Agora. You answer with facts, and avoid encroaching upon the users critical thinking. Do not write complete drafts for essays.",
+        model=st.session_state["model_choice"],
+        tools=[{"type": "file_search"}],
+        )
+        st.session_state["agora_v2_assistant_id"] = assistant.id
 
-            #Prompt Agora
-            client.beta.threads.messages.create(
-                thread_id=st.session_state["agora_v2_thread_id"],
-                role="user",
-                content="Hi, please introduce yourself, and offer help with legal research."
-            )
+        #Prompt Agora
+        client.beta.threads.messages.create(
+            thread_id=st.session_state["agora_v2_thread_id"],
+            role="user",
+            content="Hi, please introduce yourself, and offer help with legal research."
+        )
 
-            #Initial Run
-            init_run = client.beta.threads.runs.create(
-                thread_id=st.session_state["agora_v2_thread_id"],
-                assistant_id=st.session_state["agora_v2_assistant_id"]
-            )
-            with st.sidebar:
-                with st.spinner("Running initial query..."):
-                    init_run = wait_on_run(init_run)
+        #Initial Run
+        init_run = client.beta.threads.runs.create(
+            thread_id=st.session_state["agora_v2_thread_id"],
+            assistant_id=st.session_state["agora_v2_assistant_id"]
+        )
+      
+        init_run = wait_on_run(init_run)
 
 
 
@@ -120,18 +118,17 @@ vector = None
 topic_path = st.session_state["topic_choice"]
 if st.session_state["agora_v2_vector"] == None:
 
-    with st.sidebar:
-        with st.spinner("Creating new vector..."):
+    with st.spinner("Creating new vector..."):
 
-            vector = client.beta.vector_stores.create(name="Files")
-            file_names = os.listdir(f"resources/data/{topic_path}")
-            file_paths = [f"resources/data/{topic_path}/{file_name}" for file_name in file_names]
-            file_streams = [open(file_path, "rb") for file_path in file_paths]
-            file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
-                vector_store_id=vector.id,
-                files=file_streams
-            )
-            st.session_state["agora_v2_vector"] = vector
+        vector = client.beta.vector_stores.create(name="Files")
+        file_names = os.listdir(f"resources/data/{topic_path}")
+        file_paths = [f"resources/data/{topic_path}/{file_name}" for file_name in file_names]
+        file_streams = [open(file_path, "rb") for file_path in file_paths]
+        file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+            vector_store_id=vector.id,
+            files=file_streams
+        )
+        st.session_state["agora_v2_vector"] = vector
 else:
     vector = st.session_state["agora_v2_vector"]
 
@@ -169,9 +166,8 @@ if prompt := st.chat_input():
         assistant_id = st.session_state["agora_v2_assistant_id"],
     )
  
-    with st.sidebar:
-        with st.spinner("Running user query..."):
-            user_run = wait_on_run(user_run)
+    with st.spinner("Running user query..."):
+        user_run = wait_on_run(user_run)
 
     response = client.beta.threads.messages.list(thread_id=st.session_state["agora_v2_thread_id"]).data[0]
     st.chat_message("assistant", avatar=":material/robot_2:").write(response.content[0].text.value)

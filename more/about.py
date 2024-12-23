@@ -38,10 +38,10 @@ st.write(
 
     **User Interface**
 
-    The elements of the user interface are Streamlit components, from Streamlit's API. 
+    The elements of the user interface are Streamlit components from Streamlit's API. 
     Although the functionality belongs to the app, the appearance is Streamlit code. 
     Streamlit allows for rapid development of novel things, such as Agora and Queequeg, by
-    handling many of the boilerplate UI and hosting code.
+    handling much of the boilerplate UI and hosting code.
 
     **Future**
 
@@ -51,7 +51,7 @@ st.write(
     """
 )
 
-st.caption("Version v1.0c")
+st.caption("Version v1.1c")
 
 
 st.divider()
