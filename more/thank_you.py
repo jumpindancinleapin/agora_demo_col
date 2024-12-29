@@ -12,7 +12,7 @@ def reset_demo():
     # - Pref
     
     st.session_state["avatar_choice"] = "🦁"
-    st.session_state["topic_choice"] = "1_PicnicMystery"
+    st.session_state["topic_choice"] = "Artificial_Intelligence"
     st.session_state["model_choice"] = "gpt-4o"
 
     # - Agora v2
