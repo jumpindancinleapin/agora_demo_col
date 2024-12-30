@@ -51,7 +51,7 @@ st.write(
     """
 )
 
-st.caption("Version v1.1c")
+st.caption("Version v1.2c")
 
 
 st.divider()
