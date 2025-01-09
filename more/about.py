@@ -45,9 +45,13 @@ st.write(
 
     **Future**
 
-    This tech-stack allows for rapid scaling. The app is built to be modular, and interoperable
-    with databases, payment systems, account systems, et cetera. **While this is a very simple demonstration, 
-    the potential for this app is as far as our imaginations take us.** 
+    I am currently migrating this platform away from Streamlit to enable more 
+    flexibility as the platform grows. Streamlit is excellent at 
+    creating smaller apps really fast. I wrote the bulk of this app in several days. 
+    At its core, however, it requires 
+    code to be run at a high redundancy in certain use cases which slows things down. For this use 
+    case, an event based execution model is required. React, a popular JS 
+    framework, and Reflex, a React-based Python framework are under consideration.  
     """
 )
 

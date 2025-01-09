@@ -36,18 +36,12 @@ def reset_demo():
 st.title("Thank you!")
 st.write(
     """
-    Columbia Law School is my dream. By the numbers, my potential is below that of the average CLS matriculant. 
-    My drive speaks louder. This app exists to showcase my commitment to empowering others, and my ability 
-    to innovate and solve problems. 
+    Columbia Law School is my dream. 
+    Technology is my home turf. I am 
+    thankful for an opportunity to be seen at my best. 
     
-    Not only am I trained in AI from a business perspective, **I am a practioner**. 
-    From writing perceptrons to implementing chatbots, I have done it. This app 
-    is my take on aligning AI with a law student's responsibilities. I will
-    continue to iterate upon it as I learn more about Columbia's values.
-
-    **I have nothing to lose**, and will gladly accept defeat once I have given it my all. 
-    Until then, I proceed. This way, upon acceptance, I am deserving of 
-    the opportunity that so many qualified candidates do not receive. 
+    
+    Thank you for your time and consideration. 
 
 
     All the best,
