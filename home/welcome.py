@@ -4,12 +4,12 @@ import streamlit as st
 st.session_state["last_page_visited"] = "home/welcome.py"
 
 #Image
-head_l, head_m, head_r = st.columns(3)
-with head_m:
-    st.image(
-            "resources/images/columbia_law_brand.jpg",
-            caption=None,
-        )
+
+
+st.image(
+        "resources/images/garden.jpg",
+        caption=None,
+)
 
 
 #Messaging
